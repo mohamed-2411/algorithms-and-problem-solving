@@ -1,4 +1,4 @@
-# Problem 001 - Print Your Name
+# Problem 001
 
 ## Problem Statement
 
