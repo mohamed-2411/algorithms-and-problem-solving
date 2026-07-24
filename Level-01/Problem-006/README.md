@@ -7,6 +7,7 @@ Write a program to ask the user to enter:
 •Last Name
 Then Print Full Name on screen.
 Example Input:
+
 Mohammed
 Mostafa
 
