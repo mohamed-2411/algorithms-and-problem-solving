@@ -9,6 +9,7 @@ Then Print Full Name on screen.
 Example Input:
 
 Mohammed
+
 Mostafa
 
 Output
