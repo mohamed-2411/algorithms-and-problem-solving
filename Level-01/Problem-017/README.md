@@ -1,0 +1,32 @@
+# Problem-017
+
+## Problem Statement
+
+Write a program to calculate triangle area then print it on the screen.
+The use should enter:
+
+a
+
+h
+
+Example Inputs:
+
+10
+
+8
+
+Outputs
+
+40
+
+---
+
+## Status
+
+ Solved
+
+ ---
+
+ ## Difficulty
+
+ Easy
