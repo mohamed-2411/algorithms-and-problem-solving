@@ -10,6 +10,7 @@ The use should enter:
 a
 
 d
+
 Example Inputs:
 
 5
