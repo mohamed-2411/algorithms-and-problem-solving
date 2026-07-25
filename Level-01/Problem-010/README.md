@@ -1,4 +1,4 @@
-# Problem-0010
+# Problem-010
 
 ## Problem Statement
 
