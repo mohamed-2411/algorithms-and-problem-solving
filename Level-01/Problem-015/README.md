@@ -18,10 +18,10 @@ Outputs
 
 ## Status
 
- Unsolved
+ Solved
 
  ---
 
  ## Difficulty
 
- Medium
+ Easy
