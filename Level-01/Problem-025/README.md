@@ -1,0 +1,26 @@
+# Problem-025
+
+## Problem Statement
+
+Write a program to ask the user to enter :
+
+•Age
+
+If age is between 18 and 45 print “Valid Age” otherwise print
+
+“Invalid Age” and re-ask user to enter a valid age
+.
+Note: You should keep asking user to enter a valid age until
+s/she enters it.
+
+---
+
+## Status
+
+ Solved
+
+ ---
+
+ ## Difficulty
+
+ Easy
