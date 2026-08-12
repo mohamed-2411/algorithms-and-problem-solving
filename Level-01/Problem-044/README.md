@@ -1,0 +1,45 @@
+# Problem-044
+
+## Problem Statement
+
+Write a program to ask the user to enter:
+
+•Day
+
+Then print the day as follows:
+
+•1 Print Sunday
+
+•2 Print Monday
+
+•3 Print Tuesday
+
+•4 Print Wednesday
+
+•5 Print Thursday
+
+•6 Print Friday
+
+•7 Print Saturday
+
+•Otherwise print “Wrong Day” and ask the use to enter the day again.
+
+Example Inputs:
+
+6
+
+Outputs
+
+Its Friday
+
+---
+
+## Status
+
+ Solved
+
+ ---
+
+ ## Difficulty
+
+Easy
