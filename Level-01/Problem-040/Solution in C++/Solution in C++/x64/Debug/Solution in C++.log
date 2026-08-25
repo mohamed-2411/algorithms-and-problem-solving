@@ -1,0 +1,4 @@
+﻿  Solution in C++.cpp
+C:\Users\mohamed\source\repos\algorithms-and-problem-solving\Level-01\Problem-040\Solution in C++\Solution in C++\Solution in C++.cpp(12,27): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\mohamed\source\repos\algorithms-and-problem-solving\Level-01\Problem-040\Solution in C++\Solution in C++\Solution in C++.cpp(13,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Solution in C++.vcxproj -> C:\Users\mohamed\source\repos\algorithms-and-problem-solving\Level-01\Problem-040\Solution in C++\x64\Debug\Solution in C++.exe
