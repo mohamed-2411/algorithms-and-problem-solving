@@ -3,6 +3,11 @@
 
 using namespace std;
 
+float RectangleArea(float a, float d)
+{
+	return a * sqrt(pow(d, 2) - pow(a, 2));
+}
+
 int main()
 {
 	float a, d, Area;
@@ -13,11 +18,9 @@ int main()
 	cout << "Please, enter d: \n";
 	cin >> d;
 
-	Area = a * sqrt(pow(d, 2) - pow(a, 2));
+	Area = RectangleArea(a, d);
 
-	cout << Area << endl;
-
-
+	cout << "Area = " << Area << endl;
 
 
 

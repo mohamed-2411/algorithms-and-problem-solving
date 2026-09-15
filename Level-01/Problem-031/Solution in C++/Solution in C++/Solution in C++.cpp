@@ -1,17 +1,24 @@
 #include <iostream>
+#include <cmath>
+
 using namespace std;
 
-int main()
+void PowerOfNumber()
 {
 	int Num;
 
 	cout << "Please, enter the number: \n";
 	cin >> Num;
 
-	cout << round(pow(Num, 2)) << endl;
-	cout << round(pow(Num, 3)) << endl;
-	cout << round(pow(Num, 4)) << endl;
+	cout << pow(Num, 2) << endl;
+	cout << pow(Num, 3) << endl;
+	cout << pow(Num, 4) << endl;
 
+}
+
+int main()
+{
+	PowerOfNumber();
 
 
 	return 0;

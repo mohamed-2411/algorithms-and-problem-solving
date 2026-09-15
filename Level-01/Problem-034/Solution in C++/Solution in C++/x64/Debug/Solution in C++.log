@@ -1,0 +1,6 @@
+﻿  Solution in C++.cpp
+C:\Users\mohamed\source\repos\algorithms-and-problem-solving\Level-01\Problem-034\Solution in C++\Solution in C++\Solution in C++.cpp(13,16): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\mohamed\source\repos\algorithms-and-problem-solving\Level-01\Problem-034\Solution in C++\Solution in C++\Solution in C++.cpp(18,16): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\mohamed\source\repos\algorithms-and-problem-solving\Level-01\Problem-034\Solution in C++\Solution in C++\Solution in C++.cpp(23,16): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\mohamed\source\repos\algorithms-and-problem-solving\Level-01\Problem-034\Solution in C++\Solution in C++\Solution in C++.cpp(28,16): warning C4305: '=': truncation from 'double' to 'float'
+  Solution in C++.vcxproj -> C:\Users\mohamed\source\repos\algorithms-and-problem-solving\Level-01\Problem-034\Solution in C++\x64\Debug\Solution in C++.exe

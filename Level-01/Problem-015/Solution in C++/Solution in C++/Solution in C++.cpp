@@ -1,27 +1,22 @@
 #include <iostream>
 using namespace std;
 
+float RectangleArea(float a, float b)
+{
+	return a * b;
+}
+
 int main()
 {
-	int Length, Width, Area;
+	float a, b, Area;
 
-	cout << "Please, enter the length: \n";
-	cin >> Length;
+	cout << "Please, enter a: \n";
+	cin >> a;
 
-	cout << "Please, enter the width: \n";
-	cin >> Width;
+	cout << "Please, enter b: \n";
+	cin >> b;
 
-	Area = Length * Width;
-
-	cout << "The area of the rectangle is: " << Area << endl;
-	
-
-
-
-
-	
-
-
-
+	Area = RectangleArea(a, b);
+	cout << "Area = " << Area << endl;
 	return 0;
 }

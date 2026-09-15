@@ -1,5 +1,12 @@
 #include <iostream>
+#include <cmath>
+
 using namespace std;
+
+float CircleArea(const float PI, float L)
+{
+	return (pow(L, 2)) / (PI * 4);
+}
 
 int main()
 {
@@ -8,15 +15,10 @@ int main()
 
 	cout << "Please, enter L: \n";
 	cin >> L;
-	
-	Area = pow(L, 2) / (4 * PI);
 
-	cout << floor(Area);
+	Area = CircleArea(PI, L);
 
-
-
-
-
+	cout << "Area = " << Area << endl;
 
 
 	return 0;

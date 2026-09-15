@@ -1,4 +1,5 @@
 ﻿  Solution in C++.cpp
-C:\Users\mohamed\source\repos\algorithms-and-problem-solving\Level-01\Problem-023\Solution in C++\Solution in C++\Solution in C++.cpp(8,17): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\mohamed\source\repos\algorithms-and-problem-solving\Level-01\Problem-023\Solution in C++\Solution in C++\Solution in C++.cpp(22,12): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\mohamed\source\repos\algorithms-and-problem-solving\Level-01\Problem-023\Solution in C++\Solution in C++\Solution in C++.cpp(9,17): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\mohamed\source\repos\algorithms-and-problem-solving\Level-01\Problem-023\Solution in C++\Solution in C++\Solution in C++.cpp(12,12): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\mohamed\source\repos\algorithms-and-problem-solving\Level-01\Problem-023\Solution in C++\Solution in C++\Solution in C++.cpp(17,17): warning C4305: 'initializing': truncation from 'double' to 'float'
   Solution in C++.vcxproj -> C:\Users\mohamed\source\repos\algorithms-and-problem-solving\Level-01\Problem-023\Solution in C++\x64\Debug\Solution in C++.exe

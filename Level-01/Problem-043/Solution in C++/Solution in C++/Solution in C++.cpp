@@ -1,26 +1,30 @@
 #include <iostream>
 using namespace std;
 
-int main()
+void SecToDaysHoursMinutesSeconds()
 {
-	int days, hours, minutes, seconds, TotalSeconds;
+	int TotalSeconds, Days, Minutes, Hours, Seconds;
 
-	cout << "Please, enter Total Seconds: \n";
+	cout << "Please, enter total seconds: \n";
 	cin >> TotalSeconds;
 
-	days = TotalSeconds / 86400;
-	TotalSeconds -= days * 86400;
+	Days = TotalSeconds / 86400;
+	TotalSeconds -= Days * 86400;
 
-	hours = TotalSeconds / 3600;
-	TotalSeconds -= hours * 3600;
+	Hours = TotalSeconds / 3600;
+	TotalSeconds -= Hours * 3600;
 
-	minutes = TotalSeconds / 60;
-	TotalSeconds -= minutes * 60;
+	Minutes = TotalSeconds / 60;
+	TotalSeconds -= Minutes * 60;
 
-	seconds = TotalSeconds;
+	Seconds = TotalSeconds;
 
-	cout << round(days) << ":" << round(hours) << ":" << round(minutes) << ":" << round(seconds) << endl;
+	cout << Days << ":" << Hours << ":" << Minutes << ":" << Seconds << endl;
+}
 
+int main()
+{
+	SecToDaysHoursMinutesSeconds();
 
 
 	return 0;

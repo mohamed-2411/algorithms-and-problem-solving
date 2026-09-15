@@ -1,13 +1,13 @@
 #include <iostream>
 using namespace std;
 
-int main()
+void SwapNumbers()
 {
-	int Num1, Num2, Temp;
-
+	float Num1, Num2, Temp;
+	
 	cout << "Please, enter Num1: \n";
 	cin >> Num1;
-
+	
 	cout << "Please, enter Num2: \n";
 	cin >> Num2;
 
@@ -18,12 +18,12 @@ int main()
 	Num1 = Num2;
 	Num2 = Temp;
 
-	cout << "After swapping numbers:-\n";
-	cout << "------------------------------\n"; 
-
 	cout << "Num1 = " << Num1 << endl;
 	cout << "Num2 = " << Num2 << endl;
+}
 
-
+int main()
+{
+	SwapNumbers();
 	return 0;
 }

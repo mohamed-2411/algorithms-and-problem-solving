@@ -3,9 +3,15 @@
 
 using namespace std;
 
+int DurationInSeconds(int days, int hours, int minutes, int seconds)
+{
+	int TotalSeconds = (days * 24 * 60 * 60) + (hours * 60 * 60) + (minutes * 60) + seconds;
+	return TotalSeconds;
+}
+
 int main()
 {
-	int days, hours, minutes, seconds, Total_Seconds;
+	int days, hours, minutes, seconds, TotalSeconds;
 
 	cout << "Please, enter days: \n";
 	cin >> days;
@@ -16,19 +22,11 @@ int main()
 	cout << "Please, enter minutes: \n";
 	cin >> minutes;
 
-	cout << "Please, enter seconds: \n";
+	cout << "Please, etner seconds: \n";
 	cin >> seconds;
 
-	Total_Seconds = (days * 24 * 60 * 60) + (hours * 60 * 60) + (minutes * 60) + seconds;
-
-
-	cout << "Total Seconds = " << round(Total_Seconds);
-
-
-
-
-
-
+	TotalSeconds = DurationInSeconds(days, hours, minutes, seconds);
+	cout << TotalSeconds << " Seconds" << endl;
 
 
 	return 0;
