@@ -1,23 +1,44 @@
 #include <iostream>
 using namespace std;
 
+struct stNumbers
+{
+	float Num1;
+	float Num2;
+	float Num3;
+};
+
+stNumbers ReadNumbers()
+{
+	stNumbers Numbers;
+
+	cout << "Please enter Number1: \n";
+	cin >> Numbers.Num1;
+
+	cout << "Please enter Number2: \n";
+	cin >> Numbers.Num2;
+
+	cout << "Please enter Number3: \n";
+	cin >> Numbers.Num3;
+
+	return Numbers;
+}
+
+float CalculteAverage(stNumbers Numbers)
+{
+	float Average = (Numbers.Num1 + Numbers.Num2 + Numbers.Num3) / 3;
+	return Average;
+}
+
+void PrintAverage(stNumbers Numbers)
+{
+	cout << "\nThe Average of the entered numbers is: " << CalculteAverage(Numbers) << endl;
+}
+
 int main()
 {
-	float Mark1, Mark2, Mark3;
 
-	cout << "Please, eneter Mark1: \n";
-	cin >> Mark1;
-
-	cout << "Please, enter Mark2: \n";
-	cin >> Mark2;
-
-	cout << "Please, enter Mark3: \n";
-	cin >> Mark3;
-
-	float Average = (Mark1 + Mark2 + Mark3) / 3;
-
-	cout << "The average of the entered marks is: " << Average << endl;
-
+	PrintAverage(ReadNumbers());
 
 	return 0;
 }

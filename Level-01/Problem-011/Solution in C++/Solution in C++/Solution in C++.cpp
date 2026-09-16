@@ -1,30 +1,59 @@
 #include <iostream>
 using namespace std;
 
-int main()
+struct stMarks
 {
-	float Mark1, Mark2, Mark3, Average;
+	float Mark1, Mark2, Mark3;
+};
 
-	cout << "Please, enter Mark1: \n";
-	cin >> Mark1;
+stMarks ReadMarks()
+{
+	stMarks Marks;
 
-	cout << "Please, enter Mark2: \n";
-	cin >> Mark2;
+	cout << "Please enter mark1: \n";
+	cin >> Marks.Mark1;
 
-	cout << "Please, enter Mark3: \n";
-	cin >> Mark3;
+	cout << "Please enter mark2: \n";
+	cin >> Marks.Mark2;
 
-	Average = (Mark1 + Mark2 + Mark3) / 3;
+	cout << "Please enter mark3: \n";
+	cin >> Marks.Mark3;
 
-	if (Average >= 50)
+	return Marks;
+}
+
+float CalculateAverage(stMarks Marks)
+{
+	float Average = (Marks.Mark1 + Marks.Mark2 + Marks.Mark3) / 3;
+	return Average;
+}
+
+bool CheckAverage(float Average)
+{
+	return (Average >= 50);
+}
+
+void PrintAverage(float Average)
+{
+	cout << endl << "The average of entered marks is: " << Average << endl;
+
+	if (CheckAverage(Average))
 	{
-		cout << "Pass\n";
+		cout << "PASS\n";
 	}
 	else
 	{
 		cout << "Fail\n";
 	}
 
+
+		
+}
+
+int main()
+{
+
+	PrintAverage(CalculateAverage(ReadMarks()));
 
 	return 0;
 }

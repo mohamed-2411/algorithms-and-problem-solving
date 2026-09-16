@@ -3,28 +3,32 @@
 
 using namespace std;
 
-float RectangleArea(float a, float d)
+void ReadNumbers(float& A, float& D)
 {
-	return a * sqrt(pow(d, 2) - pow(a, 2));
+	cout << "Please enter A: \n";
+	cin >> A;
+
+	cout << "Please enter B: \n";
+	cin >> D;
+}
+
+float RectangleAreaBySideAndDiagonal(float A, float D)
+{
+	float Area = A * sqrt(pow(D, 2) - pow(A, 2));
+	return Area;
+}
+
+void PrintArea(float Area)
+{
+	cout << "\nRectangle Area = " << Area << endl;
 }
 
 int main()
 {
-	float a, d, Area;
+	float A, D;
 
-	cout << "Please, enter a: \n";
-	cin >> a;
-
-	cout << "Please, enter d: \n";
-	cin >> d;
-
-	Area = RectangleArea(a, d);
-
-	cout << "Area = " << Area << endl;
-
-
-
-
+	ReadNumbers(A, D);
+	PrintArea(RectangleAreaBySideAndDiagonal(A, D));
 
 	return 0;
 }

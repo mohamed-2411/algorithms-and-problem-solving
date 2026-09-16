@@ -1,22 +1,44 @@
 #include <iostream>
 using namespace std;
 
+struct stNumbers
+{
+	int Num1;
+	int Num2;
+	int Num3;
+};
+
+stNumbers ReadNumbers()
+{
+	stNumbers Numbers;
+
+	cout << "Please enter Number1: \n";
+	cin >> Numbers.Num1;
+
+	cout << "Please enter Number2: \n";
+	cin >> Numbers.Num2;
+
+	cout << "Please enter Number3: \n";
+	cin >> Numbers.Num3;
+
+	return Numbers;
+}
+
+int CalculteSum(stNumbers Numbers)
+{
+	int Sum = Numbers.Num1 + Numbers.Num2 + Numbers.Num3;
+	return Sum;
+}
+
+void PrintSum(stNumbers Numbers)
+{
+	cout << "\nThe sum of the entered numbers is: " << CalculteSum(Numbers) << endl;
+}
+
 int main()
 {
-	int Num1, Num2, Num3;
-
-	cout << "Please, enter Num1: \n";
-	cin >> Num1;
-
-	cout << "Please, enter Num2: \n";
-	cin >> Num2;
-
-	cout << "Please, enter Num3: \n";
-	cin >> Num3;
-
-	cout << "The sum of the entered numbers = " << Num1 + Num2 + Num3 << endl;
-
-
+	
+	PrintSum(ReadNumbers());
 
 	return 0;
 }
