@@ -3,32 +3,36 @@
 
 using namespace std;
 
-float CircleArea(float a, float b, float c)
+void ReadTriangleData(float& A, float& B, float& C)
 {
-	float p = (a + b + c) / 2;
+	cout << "Please enter A: \n";
+	cin >> A;
+
+	cout << "Please enter B: \n";
+	cin >> B;
+
+	cout << "Please enter C: \n";
+	cin >> C;
+}
+
+float CircleAreaAroundAnArbitraryTriangle(float A, float B, float C)
+{
 	const float PI = 3.14;
-	float result;
-	result = (a * b * c) / (4 * sqrt(p * (p - a) * (p - b) * (p - c)));
-	return PI * pow(result, 2);
+	float P = (A + B + C) / 2;
+	float Area = PI * pow((A * B * C) / (4 * sqrt(P * (P - A) * (P - B) * (P - C))), 2);
+	return Area;
+}
+
+void PrintCircleArea(float Area)
+{
+	cout << "\nCircle Area = " << Area << endl;
 }
 
 int main()
 {
-	const float PI = 3.14;
-	float a, b, c, Area;
-
-	cout << "Please, enter a: \n";
-	cin >> a;
-
-	cout << "Please, enter b: \n";
-	cin >> b;
-	
-	cout << "Please, enter c: \n";
-	cin >> c;
-
-	Area = CircleArea(a, b, c);
-
-	cout << "Area = " << Area << endl;
+	float A, B, C;
+	ReadTriangleData(A, B, C);
+	PrintCircleArea(CircleAreaAroundAnArbitraryTriangle(A, B, C));
 
 	return 0;
 }

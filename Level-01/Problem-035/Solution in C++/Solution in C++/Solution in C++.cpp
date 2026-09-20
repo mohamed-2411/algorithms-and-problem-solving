@@ -1,33 +1,62 @@
 #include <iostream>
 using namespace std;
 
+struct stCurrency
+{
+	float Pennies, Nickels, Dimes, Quarters, Dollars;
+};
+
+stCurrency ReadCurrency()
+{
+	stCurrency Currency;
+	
+	cout << "Please enter Pennies: \n";
+	cin >> Currency.Pennies;
+
+	cout << "Please enter Nickels: \n";
+	cin >> Currency.Nickels;
+
+	cout << "Please enter Dimes: \n";
+	cin >> Currency.Dimes;
+
+	cout << "Please enter Quarters: \n";
+	cin >> Currency.Quarters;
+
+	cout << "Please enter Dollars: \n";
+	cin >> Currency.Dollars;
+
+	return Currency;
+}
+
+float TotalPennies(stCurrency Currency)
+{
+	float TotalPennies = Currency.Pennies + (Currency.Nickels * 5) +
+		(Currency.Dimes * 10) + (Currency.Quarters * 25) + (Currency.Dollars * 100);
+	return TotalPennies;
+}
+
+float TotalDollars(stCurrency Currency)
+{
+	return TotalPennies(Currency) / 100;
+}
+
+void PrintTotalPennies(float TotalPennies)
+{
+	cout << endl << TotalPennies << " Pennies\n";
+}
+
+void PrintTotalDollars(float TotalDollars)
+{
+	cout << endl << TotalDollars << " Dollars" << endl;
+}
+
+
 int main()
 {
-	float Pennies, Nickels, Dimes, Quarters,
-		  Dollars, Total_Pennies, Total_Dollars;
+	stCurrency Currency = ReadCurrency();
 
-	cout << "Please, enter Pennies: \n";
-	cin >> Pennies;
-
-	cout << "Please, enter Nickels: \n";
-	cin >> Nickels;
-
-	cout << "Please, enter Dimes: \n";
-	cin >> Dimes;
-
-	cout << "Please, enter Quarters: \n";
-	cin >> Quarters;
-
-	cout << "Please, enter Dollars: \n";
-	cin >> Dollars;
-
-	Total_Pennies = Pennies + (Nickels * 5) + (Dimes * 10) + (Quarters * 25) + (Dollars * 100);
-	Total_Dollars = Total_Pennies / 100;
-
-	cout << Total_Pennies << " Pennies\n";
-	cout << Total_Dollars << " Dollars\n";
-
-
+	PrintTotalPennies(TotalPennies(Currency));
+	PrintTotalDollars(TotalDollars(Currency));
 
 	return 0;
 }

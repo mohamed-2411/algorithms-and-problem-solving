@@ -1,41 +1,40 @@
 #include <iostream>
 using namespace std;
 
-int ReadN()
+int ReadPositiveNumber(string Message)
 {
 	int N;
 
-	cout << "Please enter N: \n";
-	cin >> N;
-
-	while (N < 0)
+	do
 	{
-		cout << "Please enter N: \n";
+		cout << Message << endl;;
 		cin >> N;
-	}
-	
+	} while (N <= 0);
+
 	return N;
 }
 
-int Calculate_Factorial_Of_N()
+int FactorialOfNumber(int N)
 {
-	int N = ReadN();
-	int Result = 1, i = N;
+	int Result = 1;
 
-	while (i >= 1)
+	for (int i = N; i >= 1; i--)
 	{
 		Result *= i;
-		i--;
 	}
-	
+
 	return Result;
+}
+
+void PrintResult(int Result)
+{
+	cout << "\nResult = " << Result << endl;
 }
 
 int main()
 {
-	int Result = Calculate_Factorial_Of_N();
 
-	cout << "Result = " << Result << endl;
+	PrintResult(FactorialOfNumber(ReadPositiveNumber("Please enter a positive number: ")));
 
 	return 0;
 }

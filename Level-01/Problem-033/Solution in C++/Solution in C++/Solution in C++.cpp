@@ -1,36 +1,44 @@
 #include <iostream>
 using namespace std;
 
-int main()
+int ReadGrade()
 {
 	int Grade;
-
-	cout << "Please, enter Grade: \n";
-	cin >> Grade;
-
-	if (Grade >= 90 && Grade <= 100)
+	
+	do
 	{
-		cout << "A\n";
-	}
+		cout << "Please enter a Grade: \n";
+		cin >> Grade;
+	} while (Grade < 0 || Grade > 100);
+
+	return Grade;
+}
+
+char GetGradeLetter(int Grade)
+{
+	if (Grade >= 90)
+		return 'A';
 	else if (Grade >= 80)
-	{
-		cout << "B\n";
-	}
+		return 'B';
 	else if (Grade >= 70)
-	{
-		cout << "C\n";
-	}
+		return 'C';
 	else if (Grade >= 60)
-	{
-		cout << "D\n";
-	}
+		return 'D';
 	else if (Grade >= 50)
-	{
-		cout << "E\n";
-	}
+		return 'E';
 	else
-	{
-		cout << "F\n";
-	}
+		return 'F';
+}
+
+void PrintResult(char Result)
+{
+	cout << endl << Result << endl;
+}
+
+int main()
+{
+	
+	PrintResult(GetGradeLetter(ReadGrade()));
+
 	return 0;
 }

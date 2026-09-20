@@ -3,22 +3,27 @@
 
 using namespace std;
 
-void PowerOfNumber()
+int ReadNumberAndPower()
 {
-	int Num;
+	int N;
 
-	cout << "Please, enter the number: \n";
-	cin >> Num;
+	cout << "Please enter a number: \n";
+	cin >> N;
 
-	cout << pow(Num, 2) << endl;
-	cout << pow(Num, 3) << endl;
-	cout << pow(Num, 4) << endl;
+	return N;
+}
 
+void PrintPowOf2_3_4(int N)
+{
+	cout << N << " Power of 2 " << N * N << endl;
+	cout << N << " Power of 3 " << N * N * N << endl;
+	cout << N << " Power of 4 " << N * N * N * N << endl;
 }
 
 int main()
 {
-	PowerOfNumber();
+
+	PrintPowOf2_3_4(ReadNumberAndPower());
 
 
 	return 0;

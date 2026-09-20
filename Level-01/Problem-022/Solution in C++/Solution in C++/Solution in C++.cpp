@@ -3,25 +3,33 @@
 
 using namespace std;
 
-float CircleArea(const float PI, float a, float b)
+void ReadTriangleData(float& A, float& B)
 {
-	return PI * (pow(b, 2) / (4)) * ((2 * a - b) / (2 * a + b));
+	cout << "Please enter A: \n";
+	cin >> A;
+
+	cout << "Please enter B: \n";
+	cin >> B;
+}
+
+float CircleAreaInscribedInIsoscelesTriangle(float A, float B)
+{
+	const float PI = 3.14;
+	float Area = PI * (pow(B, 2) / 4) * ((2 * A - B) / (2 * A + B));
+	return Area;
+}
+
+void PrintResult(float Area)
+{
+	cout << "\nCircle Area = " << Area << endl;
 }
 
 int main()
 {
-	const float PI = 3.14;
-	float a, b, Area;
+	float A, B;
 
-	cout << "Please, enter a: \n";
-	cin >> a;
-	
-	cout << "Please, enter b: \n";
-	cin >> b;
-
-	Area = CircleArea(PI, a, b);
-
-	cout << "Area = " << Area << endl;
+	ReadTriangleData(A, B);
+	PrintResult(CircleAreaInscribedInIsoscelesTriangle(A, B));
 
 
 	return 0;

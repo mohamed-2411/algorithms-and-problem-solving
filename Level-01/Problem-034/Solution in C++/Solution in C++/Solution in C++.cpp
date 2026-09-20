@@ -1,37 +1,39 @@
 #include <iostream>
 using namespace std;
 
-int main()
+float ReadToalaSales()
 {
-	float TotalSales, Percentage;
+	float TotalSales;
 
-	cout << "Please, enter Total Sales: \n";
+	cout << "Please enter Total Sales: \n";
 	cin >> TotalSales;
 
-	if (TotalSales > 1000000)
-	{
-		Percentage = 0.01;
-		cout <<  Percentage * TotalSales << endl;
-	}
-	else if (TotalSales > 500000)
-	{
-		Percentage = 0.02;
-		cout << TotalSales * Percentage << endl;
-	}
-	else if (TotalSales > 100000)
-	{
-		Percentage = 0.03;
-		cout << TotalSales * Percentage << endl;
-	}
-	else if (TotalSales > 50000)
-	{
-		Percentage = 0.05;
-		cout << TotalSales * Percentage << endl;
-	}
+	return TotalSales;
+}
+
+float CalculateCommission(float TotalSales)
+{
+	if (TotalSales >= 1000000)
+		return TotalSales * 0.01;
+	else if (TotalSales >= 500000)
+		return TotalSales * 0.02;
+	else if (TotalSales >= 100000)
+		return TotalSales * 0.03;
+	else if (TotalSales >= 50000)
+		return TotalSales * 0.05;
 	else
-	{
-		Percentage = 0;
-		cout << TotalSales * Percentage << endl;
-	}
+		return TotalSales * 0;
+}
+
+void PrintResult(float Result)
+{
+	cout << "\nResult = " << Result << endl;
+}
+
+int main()
+{
+
+	PrintResult(CalculateCommission(ReadToalaSales()));
+
 	return 0;
 }

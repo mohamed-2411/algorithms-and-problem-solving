@@ -1,22 +1,34 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
-	short Age;
 
-	cout << "Please, enter your age: \n";
+int ReadAge()
+{
+	int Age;
+	
+	cout << "Please enter your Age: \n";
 	cin >> Age;
 
-	if (Age >= 18 && Age <= 45)
-	{
-		cout << "Valid Age\n";
-	}
-	else
-	{
-		cout << "Invalid Age\n";
-	}
+	return Age;
+}
 
+bool CheckAge(int Age)
+{
+	return (Age >= 18 && Age <= 45);
+}
+
+void PrintResult(int Age)
+{
+	if (CheckAge(Age))
+		cout << "\nValid Age\n";
+	else
+		cout << "\nInvalid Age\n";
+}
+
+int main()
+{
+
+	PrintResult(ReadAge());
 
 	return 0;
 }

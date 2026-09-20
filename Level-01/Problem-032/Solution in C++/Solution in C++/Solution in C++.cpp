@@ -1,35 +1,52 @@
-#include <iostream>
-using namespace std;
+#include <iostream>   
+#include <string>     
 
-void Read_Number_And_M(int &Number, int &M)
+using namespace std;  
+
+int ReadNumber()
 {
-	cout << "Please enter Number: \n";
-	cin >> Number;
+    int Number;
+   
+    cout << "Please enter a number? " << endl;
+    cin >> Number;
 
-	cout << "Please enter M: \n";
-	cin >> M;
+    return Number; 
 }
 
-int Calculate_The_Power_Of_M(int Number, int M)
+
+int ReadPower()
 {
-	int i = 1, Result = 1;
+    int Number;  
 
-	while (i <= M)
-	{
-		Result *= Number;
-		i++;
-	}
+    cout << "Please enter the power? " << endl;
+    cin >> Number;
 
-	return Result;
+    return Number; 
 }
+
+
+int PowerOfM(int Number, int M)
+{
+    if (M == 0)
+    {
+        return 1;
+    }
+
+    int P = 1; 
+    
+    for (int i = 1; i <= M; i++)
+    {
+        P = P * Number;  
+    }
+
+    return P;  
+}
+
 
 int main()
 {
+  
+    cout << PowerOfM(ReadNumber(), ReadPower()) << endl;
 
-	int Number, M, Result;
-	Read_Number_And_M(Number, M);
-	Result = Calculate_The_Power_Of_M(Number, M);
-	cout << "Result = " << Result << endl;
-
-	return 0;
+    return 0; 
 }

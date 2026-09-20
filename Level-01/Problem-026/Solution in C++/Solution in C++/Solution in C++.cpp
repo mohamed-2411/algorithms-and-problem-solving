@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int Read_N()
+int ReadN()
 {
 	int N;
 	cout << "Please enter N: \n";
@@ -9,14 +9,11 @@ int Read_N()
 	return N;
 }
 
-void print_numbers_from_1_to_N()
+void PrintNumbersFrom1ToN(int N)
 {
-	int N = Read_N();
-	int i = 1;
-	while (i <= N)
+	for (int i = 1; i <= N; i++)
 	{
 		cout << i << endl;
-		i++;
 	}
 }
 
@@ -24,7 +21,7 @@ void print_numbers_from_1_to_N()
 int main()
 {
 	
-	print_numbers_from_1_to_N();
+	PrintNumbersFrom1ToN(ReadN());
 
 	return 0;
 }

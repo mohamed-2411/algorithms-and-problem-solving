@@ -3,22 +3,31 @@
 
 using namespace std;
 
-float CircleArea(const float PI, float A)
+float ReadSquareSide()
 {
-	return (PI * pow(A, 2)) / 4;
+	float A;
+
+	cout << "Please enter A: \n";
+	cin >> A;
+
+	return A;
+}
+
+float CircleAreaInscribedInSquare(float A)
+{
+	const float PI = 3.14;
+
+	float Area = (PI * pow(A, 2)) / 4;
+	return Area;
+}
+
+void PrintResult(float Area)
+{
+	cout << "\nCircle Area = " << Area << endl;
 }
 
 int main()
 {
-	const float PI = 3.14;
-	float A, Area;
-
-	cout << "Please, enter A: \n";
-	cin >> A;
-
-	Area = CircleArea(PI, A);
-
-	cout << "Area = " << Area << endl;
-	
+	PrintResult(CircleAreaInscribedInSquare(ReadSquareSide()));	
 	return 0;
 }

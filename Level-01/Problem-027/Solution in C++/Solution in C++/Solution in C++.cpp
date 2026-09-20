@@ -1,29 +1,28 @@
 #include <iostream>
 using namespace std;
 
-int Read_N()
+int ReadNumber()
 {
 	int N;
-	cout << "Please enter N: \n";
+
+	cout << "Please enter a number: \n";
 	cin >> N;
+
 	return N;
 }
 
-void print_numbers_from_1_to_N()
+void PrintNumbersFromNTo1(int Number)
 {
-	int N = Read_N();
-	while (N >= 1) 
+	for (int i = Number; i >= 1; i--)
 	{
-		cout << N << endl;
-		N--;
+		cout << i << endl;
 	}
 }
-
 
 int main()
 {
 
-	print_numbers_from_1_to_N();
+	PrintNumbersFromNTo1(ReadNumber());
 
 	return 0;
 }

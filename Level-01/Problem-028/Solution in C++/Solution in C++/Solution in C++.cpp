@@ -1,36 +1,38 @@
 #include <iostream>
 using namespace std;
 
-int ReadN()
+int ReadNumber()
 {
 	int N;
+
 	cout << "Please enter N: \n";
 	cin >> N;
+
 	return N;
 }
 
-int Sum_Odd_Numbers_Form_1_To_N()
+int SumOddNumbersFrom1ToN(int N)
 {
-	int N = ReadN();
-	int Sum = 0, i = 1;
-
-	while (i <= N)
+	int Sum = 0;
+	
+	for (int i = 1; i <= N; i++)
 	{
 		if (i % 2 != 0)
-		{
 			Sum += i;
-		}
-		i++;
 	}
+
 	return Sum;
+}
+
+void PrintResult(int Sum)
+{
+	cout << "\nSum = " << Sum << endl;
 }
 
 int main()
 {
-	int Sum = Sum_Odd_Numbers_Form_1_To_N();
 
-	cout << "Sum = " << Sum << endl;
-	
+	PrintResult(SumOddNumbersFrom1ToN(ReadNumber()));
 
 	return 0;
 }
