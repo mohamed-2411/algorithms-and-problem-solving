@@ -1,33 +1,53 @@
 #include <iostream>
-#include <cmath>
-
 using namespace std;
 
-int DurationInSeconds(int days, int hours, int minutes, int seconds)
+struct strTaskDuration
 {
-	int TotalSeconds = (days * 24 * 60 * 60) + (hours * 60 * 60) + (minutes * 60) + seconds;
+	float Days, Hours, Minutes, Seconds;
+};
+
+float ReadPositiveNumber(string Message)
+{
+	float Number = 0;
+	do
+	{
+		cout << Message << endl;
+		cin >> Number;
+	} while (Number <= 0);
+
+	return Number;
+}
+
+strTaskDuration ReadTaskDuration()
+{
+	strTaskDuration TaskDuration;
+
+	TaskDuration.Days = ReadPositiveNumber("Please enter the number of days: ");
+	TaskDuration.Hours = ReadPositiveNumber("Please enter the number of hours: ");
+	TaskDuration.Minutes = ReadPositiveNumber("Please enter the number of minutes: ");
+	TaskDuration.Seconds = ReadPositiveNumber("Please enter the number of seconds: ");
+
+	return TaskDuration;
+}
+
+float TaskDurationInSeconds(strTaskDuration TaskDuration)
+{
+	float TotalSeconds = (TaskDuration.Days * 24 * 60 * 60) + (TaskDuration.Hours * 60 * 60) +
+		(TaskDuration.Minutes * 60) + TaskDuration.Seconds;
+
 	return TotalSeconds;
+}
+
+void PrintResult(float TotalSeconds)
+{
+	cout << "\nTask Duration In Seconds: " << TotalSeconds;
+	cout << endl;
 }
 
 int main()
 {
-	int days, hours, minutes, seconds, TotalSeconds;
-
-	cout << "Please, enter days: \n";
-	cin >> days;
-
-	cout << "Please, enter hours: \n";
-	cin >> hours;
-
-	cout << "Please, enter minutes: \n";
-	cin >> minutes;
-
-	cout << "Please, etner seconds: \n";
-	cin >> seconds;
-
-	TotalSeconds = DurationInSeconds(days, hours, minutes, seconds);
-	cout << TotalSeconds << " Seconds" << endl;
-
+	
+	PrintResult(TaskDurationInSeconds(ReadTaskDuration()));
 
 	return 0;
 }

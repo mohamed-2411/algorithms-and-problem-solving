@@ -1,20 +1,20 @@
 #include <iostream>
 using namespace std;
 
-void PrintLetterFromAToZ()
+void PrintLettersAToZ()
 {
-	int i = 65;
-	while (i <= 90)
+	for (int Letter = 65; Letter <= 90; Letter++)
 	{
-		cout << char(i) << endl;
-		i++;
+		cout << endl << (char)Letter;
 	}
+	
+	cout << endl;
 }
 
 int main()
 {
-	
-	PrintLetterFromAToZ();
+
+	PrintLettersAToZ();
 
 	return 0;
 }

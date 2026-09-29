@@ -1,36 +1,57 @@
 #include <iostream>
 using namespace std;
 
+enum enOperationType
+{ Add = '+', Subtract = '-',
+  Multiply = '*', Divide = '/'
+};
+
+float ReadNumber(string Message)
+{
+	float Number = 0;
+
+	cout << Message << endl;
+	cin >> Number;
+
+	return Number;
+}
+
+enOperationType ReadOpType()
+{
+	char OT = '+';
+
+	cout << "Please enter Operation Type ( + , - , * , /)?\n";
+	cin >> OT;
+
+	return enOperationType(OT);
+}
+
+float Calculte(float Number1, float Number2, enOperationType OpType)
+{
+	switch (OpType)
+	{
+	case enOperationType::Add:
+		return Number1 + Number2;
+	case enOperationType::Subtract:
+		return Number1 - Number2;
+	case enOperationType::Multiply:
+		return Number1 * Number2;
+	case enOperationType::Divide:
+		return Number1 / Number2;
+	default:
+		return Number1 + Number2;
+	}
+}
+
 int main()
 {
-	float Num1, Num2;
-	char OP;
 
-	cout << "Please, enter Num1: \n";
-	cin >> Num1;
+	float Number1 = ReadNumber("Please enter the first number: ");
+	float Number2 = ReadNumber("Please enter the second number: ");
 
-	cout << "Please, enter Num2: \n";
-	cin >> Num2;
+	enOperationType OpType = ReadOpType();
 
-	cout << "Please, enter the operation: \n";
-	cin >> OP;
+	cout << endl << Calculte(Number1, Number2, OpType) << endl;
 
-	switch (OP)
-	{
-	case '+':
-		cout << Num1 << " + " << Num2 << " = " << Num1 + Num2 << endl;
-		break;
-	case '-':
-		cout << Num1 << " - " << Num2 << " = " << Num1 - Num2 << endl;
-		break;
-	case '*':
-		cout << Num1 << " * " << Num2 << " = " << Num1 * Num2 << endl;
-		break;
-	case '/':
-		cout << Num1 << " / " << Num2 << " = " << Num1 / Num2 << endl;
-		break;
-	default:
-		cout << "Please, enter a valid operator.\n";
-	}
 	return 0;
 }

@@ -1,41 +1,39 @@
 #include <iostream>
 using namespace std;
 
-void ReadPIN(int &PIN)
+int ReadPIN()
 {
-	cout << "Please enter PIN: \n";
-	cin >> PIN;
+	int PIN = 0, count = 3;
+
+	do
+	{
+		count--;
+		cout << "Please enter PIN Code: \n";
+		cin >> PIN;
+		if (PIN != 1234)
+			cout << "Wrong PIN\n";
+	} while ( PIN != 1234 && count > 0);
+
+	return PIN;
+} 
+
+bool CheckPIN(int PIN)
+{
+	return (PIN == 1234);
 }
 
-void CheckPIN(int PIN)
+void PrintResult(int PIN)
 {
-	int attempts = 2;
-
-	while (PIN != 1234 && attempts > 0)
-	{
-		cout << "Wrong PIN, ";
-		attempts--;
-		ReadPIN(PIN);
-	}
-	
-	if (PIN == 1234)
-	{
+	if (CheckPIN(PIN))
 		cout << "Your Balance is: " << 7500 << endl;
-	}
-
 	else
-	{
-		cout << "Card is locked!\n";
-	}
-
-	 
+		cout << "Card Is Locked!";
 }
 
 int main()
 {
-	int PIN;
-	ReadPIN(PIN);
-	CheckPIN(PIN);
+	int PIN = ReadPIN();
+	PrintResult(PIN);
 
 	return 0;
 }

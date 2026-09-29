@@ -1,53 +1,67 @@
 #include <iostream>
 using namespace std;
 
-int main()
+enum enMonthsOfYear
 {
-	int Month;
+	January = 1, February = 2, March = 3, April = 4, May = 5,
+	June = 6, July = 7, August = 8, September = 9, October = 10,
+	November = 11, December = 12
+};
 
-	cout << "Please, enter a month: \n";
-	cin >> Month;
+int ReadNumberInRange(string Message, int From, int To)
+{
+	int Number = 0;
+	do
+	{
+		cout << Message << endl;
+		cin >> Number;
+	} while (Number < From || Number > To);
 
+	return Number;
+}
+
+enMonthsOfYear ReadMonthOfYear()
+{
+	return (enMonthsOfYear)ReadNumberInRange("Please enter the number of the month: ", 1, 12);
+}
+
+string GetMonthOfYear(enMonthsOfYear Month)
+{
 	switch (Month)
 	{
-	case 1:
-		cout << "January\n";
-		break;
-	case 2:
-		cout << "February\n";
-		break;
-	case 3:
-		cout << "March\n";
-		break;
-	case 4:
-		cout << "April\n";
-		break;
-	case 5:
-		cout << "May\n";
-		break;
-	case 6:
-		cout << "June\n";
-		break;
-	case 7:
-		cout << "July\n";
-		break;
-	case 8:
-		cout << "August\n";
-		break;
-	case 9:
-		cout << "September\n";
-		break;
-	case 10:
-		cout << "October\n";
-		break;
-	case 11:
-		cout << "November\n";
-		break;
-	case 12:
-		cout << "December\n";
-		break;
+	case enMonthsOfYear::January:
+		return "January";
+	case enMonthsOfYear::February:
+		return "February";
+	case enMonthsOfYear::March:
+		return "March";
+	case enMonthsOfYear::April:
+		return "April";
+	case enMonthsOfYear::May:
+		return "May";
+	case enMonthsOfYear::June:
+		return "June";
+	case enMonthsOfYear::July:
+		return "July";
+	case enMonthsOfYear::August:
+		return "August";
+	case enMonthsOfYear::September:
+		return "September";
+	case enMonthsOfYear::October:
+		return "October";
+	case enMonthsOfYear::November:
+		return "Novermber";
+	case enMonthsOfYear::December:
+		return "December";
 	default:
-		cout << "Wrong Month\n";
+		return "Wrong Month";
 	}
+}
+
+int main()
+{
+	
+	cout << GetMonthOfYear(ReadMonthOfYear()) << endl;
+
 	return 0;
 }

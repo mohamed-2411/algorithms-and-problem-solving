@@ -1,24 +1,30 @@
 #include <iostream>
 using namespace std;
 
+float ReadPositiveNumber(string Message)
+{
+	float Number = 0;
+	do
+	{
+		cout << Message << endl;
+		cin >> Number;
+	} while (Number <= 0);
+
+	return Number;
+}
+
+float MonthsToSettleTheLoan(int LoanAmount, int MonthlyPayment)
+{
+	return (float) LoanAmount / MonthlyPayment;
+}
+
+
 int main()
 {
-	int LoanAmount, MonthlyPayment, MonthsToSettleTheLoan;
+	float LoanAmount = ReadPositiveNumber("Please enter the loan amount: ");
+	float MonthlyPayment = ReadPositiveNumber("Please enter monthly payment: ");
 
-	cout << "Please, enter loan amount: \n";
-	cin >> LoanAmount;
-
-	cout << "Please, enter Monthly Payment: \n";
-	cin >> MonthlyPayment;
-
-	MonthsToSettleTheLoan = LoanAmount / MonthlyPayment;
-
-	cout << MonthsToSettleTheLoan << " Months\n";
-
-
-
-
-
+	cout << endl << MonthsToSettleTheLoan(LoanAmount, MonthlyPayment) << " Months" << endl;
 
 
 	return 0;

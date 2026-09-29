@@ -1,31 +1,37 @@
 #include <iostream>
 using namespace std;
 
-void SecToDaysHoursMinutesSeconds()
+float ReadPositiveNumber(string Message)
 {
-	int TotalSeconds, Days, Minutes, Hours, Seconds;
+	float Number = 0;
+	do
+	{
+		cout << Message << endl;
+		cin >> Number;
+	} while (Number <= 0);
 
-	cout << "Please, enter total seconds: \n";
-	cin >> TotalSeconds;
-
-	Days = TotalSeconds / 86400;
-	TotalSeconds -= Days * 86400;
-
-	Hours = TotalSeconds / 3600;
-	TotalSeconds -= Hours * 3600;
-
-	Minutes = TotalSeconds / 60;
-	TotalSeconds -= Minutes * 60;
-
-	Seconds = TotalSeconds;
-
-	cout << Days << ":" << Hours << ":" << Minutes << ":" << Seconds << endl;
+	return Number;
 }
+
+void SecondsToDaysHoursMinutesSeconds(float TotalSeconds)	
+{
+	int Days = TotalSeconds / 86400;
+	TotalSeconds -= (Days * 86400);
+	int Hours = TotalSeconds / 3600;
+	TotalSeconds -= (Hours * 3600);
+	int Minutes = TotalSeconds / 60;
+	TotalSeconds -= (Minutes * 60);
+	int Seconds = TotalSeconds;
+
+	cout << endl << Days << ":" << Hours << ":" << Minutes << ":" << Seconds << endl;
+}
+
+
 
 int main()
 {
-	SecToDaysHoursMinutesSeconds();
-
+	float NumberOfSeconds = ReadPositiveNumber("Please enter Number Of Seconds: ");
+	SecondsToDaysHoursMinutesSeconds(NumberOfSeconds);
 
 	return 0;
 }
